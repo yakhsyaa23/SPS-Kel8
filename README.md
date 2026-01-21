@@ -7,7 +7,7 @@ Link Presentasi : https://teams.microsoft.com/l/meetingrecap?driveId=b%21tfvVFWs
 
 Diagram konteks :
 
-<img src="https://github.com/yakhsyaa23/SPS-Kel8/tree/main/assets/Dk.png" />
+<img src="https://github.com/yakhsyaa23/SPS-Kel8/blob/main/assets/Dk.png" />
 
 DFD Level 0: 
 

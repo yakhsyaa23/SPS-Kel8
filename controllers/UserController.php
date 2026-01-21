@@ -1,6 +1,7 @@
 <?php
 require_once "../models/User.php";
 require_once "../helpers/response.php";
+require_once "../helpers/validation.php";
 
 class UserController
 {
@@ -26,12 +27,13 @@ class UserController
 
     public function store($data)
     {
-        if (!$data['username'] || !$data['password'] || !$data['role']) {
-            jsonResponse(["message" => "Invalid data"], 422);
+        $errors = validateUserData($data);
+        if (!empty($errors)) {
+            jsonResponse(["message" => "Validation errors", "errors" => $errors], 422);
         }
 
         $this->user->create(
-            $data['username'],
+            htmlspecialchars($data['username']),
             $data['password'],
             $data['role']
         );
@@ -41,12 +43,21 @@ class UserController
 
     public function update($id, $data)
     {
-        $this->user->update($id, $data['username'], $data['role']);
+        // Basic validation for update
+        if (!isset($data['username']) || !isset($data['role'])) {
+            jsonResponse(["message" => "Username and role required"], 422);
+        }
+
+        $this->user->update($id, htmlspecialchars($data['username']), $data['role']);
         jsonResponse(["message" => "User updated"]);
     }
 
     public function updatePassword($id, $data)
     {
+        if (!isset($data['password']) || strlen($data['password']) < 6) {
+            jsonResponse(["message" => "Password must be at least 6 characters"], 422);
+        }
+
         $this->user->updatePassword($id, $data['password']);
         jsonResponse(["message" => "Password updated"]);
     }

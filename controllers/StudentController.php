@@ -1,6 +1,7 @@
 <?php
 require_once "../models/Student.php";
 require_once "../helpers/response.php";
+require_once "../helpers/validation.php";
 
 class StudentController
 {
@@ -26,15 +27,16 @@ class StudentController
 
     public function store($data)
     {
-        if (!$data['user_id'] || !$data['name'] || !$data['class'] || !$data['nis']) {
-            jsonResponse(["message" => "Invalid data"], 422);
+        $errors = validateStudentData($data);
+        if (!empty($errors)) {
+            jsonResponse(["message" => "Validation errors", "errors" => $errors], 422);
         }
 
         $this->student->create(
             $data['user_id'],
-            $data['name'],
-            $data['class'],
-            $data['nis']
+            htmlspecialchars($data['name']),
+            htmlspecialchars($data['class']),
+            htmlspecialchars($data['nis'])
         );
 
         jsonResponse(["message" => "Student created"]);
@@ -42,7 +44,12 @@ class StudentController
 
     public function update($id, $data)
     {
-        $this->student->update($id, $data['name'], $data['class'], $data['nis']);
+        $errors = validateStudentData($data);
+        if (!empty($errors)) {
+            jsonResponse(["message" => "Validation errors", "errors" => $errors], 422);
+        }
+
+        $this->student->update($id, htmlspecialchars($data['name']), htmlspecialchars($data['class']), htmlspecialchars($data['nis']));
         jsonResponse(["message" => "Student updated"]);
     }
 

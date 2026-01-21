@@ -1,6 +1,7 @@
 <?php
 require_once "../models/Violation.php";
 require_once "../helpers/response.php";
+require_once "../helpers/validation.php";
 
 class ViolationController
 {
@@ -26,14 +27,15 @@ class ViolationController
 
     public function store($data)
     {
-        if (!$data['student_id'] || !$data['reported_by'] || !$data['description']) {
-            jsonResponse(["message" => "Invalid data"], 422);
+        $errors = validateViolationData($data);
+        if (!empty($errors)) {
+            jsonResponse(["message" => "Validation errors", "errors" => $errors], 422);
         }
 
         $this->violation->create(
             $data['student_id'],
             $data['reported_by'],
-            $data['description'],
+            htmlspecialchars($data['description']),
             $data['type'] ?? 'ringan',
             $data['points'] ?? 0
         );
@@ -43,9 +45,14 @@ class ViolationController
 
     public function update($id, $data)
     {
+        $errors = validateViolationData($data);
+        if (!empty($errors)) {
+            jsonResponse(["message" => "Validation errors", "errors" => $errors], 422);
+        }
+
         $this->violation->update(
             $id,
-            $data['description'],
+            htmlspecialchars($data['description']),
             $data['type'] ?? 'ringan',
             $data['points'] ?? 0,
             $data['status'] ?? 'pending'

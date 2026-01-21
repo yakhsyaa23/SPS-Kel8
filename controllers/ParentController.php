@@ -1,6 +1,7 @@
 <?php
 require_once "../models/ParentModel.php";
 require_once "../helpers/response.php";
+require_once "../helpers/validation.php";
 
 class ParentController
 {
@@ -26,15 +27,16 @@ class ParentController
 
     public function store($data)
     {
-        if (!$data['user_id'] || !$data['name'] || !$data['student_id']) {
-            jsonResponse(["message" => "Invalid data"], 422);
+        $errors = validateParentData($data);
+        if (!empty($errors)) {
+            jsonResponse(["message" => "Validation errors", "errors" => $errors], 422);
         }
 
         $this->parent->create(
             $data['user_id'],
-            $data['name'],
-            $data['phone'] ?? '',
-            $data['email'] ?? '',
+            htmlspecialchars($data['name']),
+            htmlspecialchars($data['phone'] ?? ''),
+            filter_var($data['email'] ?? '', FILTER_SANITIZE_EMAIL),
             $data['student_id']
         );
 
@@ -43,7 +45,12 @@ class ParentController
 
     public function update($id, $data)
     {
-        $this->parent->update($id, $data['name'], $data['phone'] ?? '', $data['email'] ?? '');
+        $errors = validateParentData($data);
+        if (!empty($errors)) {
+            jsonResponse(["message" => "Validation errors", "errors" => $errors], 422);
+        }
+
+        $this->parent->update($id, htmlspecialchars($data['name']), htmlspecialchars($data['phone'] ?? ''), filter_var($data['email'] ?? '', FILTER_SANITIZE_EMAIL));
         jsonResponse(["message" => "Parent updated"]);
     }
 

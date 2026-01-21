@@ -1,14 +1,17 @@
 <?php
 require_once "../models/Violation.php";
+require_once "../models/Student.php";
 require_once "../helpers/response.php";
 require_once "../helpers/validation.php";
 
 class ViolationController
 {
     private $violation;
+    private $db;
 
     public function __construct($db)
     {
+        $this->db = $db;
         $this->violation = new Violation($db);
     }
 
@@ -30,6 +33,13 @@ class ViolationController
         $errors = validateViolationData($data);
         if (!empty($errors)) {
             jsonResponse(["message" => "Validation errors", "errors" => $errors], 422);
+            return;
+        }
+
+        $student = new Student($this->db);
+        if (!$student->getById($data['student_id'])) {
+            jsonResponse(["message" => "Student not found"], 404);
+            return;
         }
 
         $this->violation->create(

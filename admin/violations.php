@@ -15,9 +15,8 @@ $method = $_SERVER['REQUEST_METHOD'];
 $id = $_GET['id'] ?? null;
 $data = json_decode(file_get_contents("php://input"), true);
 
-// Set reported_by to current user if not provided
-if ($method === "POST" && !$data['reported_by']) {
-    $data['reported_by'] = $currentUser['id'];
+if ($method === "POST" && empty($data['reported_by'])) {
+    $data['reported_by'] = $currentUser['uid'];
 }
 
 switch ($method) {

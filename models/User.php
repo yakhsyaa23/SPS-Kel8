@@ -30,7 +30,11 @@ class User
         $sql = "INSERT INTO {$this->table} (username, password, role)
                 VALUES (?, ?, ?)";
         $stmt = $this->conn->prepare($sql);
-        return $stmt->execute([$username, $hash, $role]);
+
+        if ($stmt->execute([$username, $hash, $role])) {
+            return $this->conn->lastInsertId();
+        }
+        return false;
     }
 
     // READ ALL

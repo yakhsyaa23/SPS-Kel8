@@ -21,7 +21,7 @@ if ($method !== "GET") {
 
 // Get student_id based on role
 if ($currentUser['role'] === 'siswa') {
-    $studentData = $student->getByUserId($currentUser['id']);
+    $studentData = $student->getByUserId($currentUser['uid']);
     if (!$studentData) {
         jsonResponse(["message" => "Student data not found"], 404);
     }

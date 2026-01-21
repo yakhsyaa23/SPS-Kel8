@@ -10,6 +10,11 @@ class ParentModel
         $this->conn = $db;
     }
 
+    public function getDbConnection()
+    {
+        return $this->conn;
+    }
+
     // CREATE
     public function create($user_id, $name, $phone, $email, $student_id)
     {

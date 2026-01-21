@@ -7,20 +7,20 @@ Link Presentasi : https://teams.microsoft.com/l/meetingrecap?driveId=b%21tfvVFWs
 
 Diagram konteks :
 
-<img src="https://github.com/yakhsyaa23/SPS-Kel8/assets/Dk.png" />
+<img src="https://github.com/yakhsyaa23/SPS-Kel8/tree/main/assets/Dk.png" />
 
 DFD Level 0: 
 
-<img src="[https://github.com/yakhsyaa23/SPS-Kel8/assets/DFD.png](https://github.com/yakhsyaa23/SPS-Kel8/blob/main/assets/DFD.png)" />
+<img src="https://github.com/yakhsyaa23/SPS-Kel8/blob/main/assets/DFD.png" />
 
 
 
 Dukumentasi : 
 
-<img src="https://github.com/yakhsyaa23/SPS-Kel8/assets/Login.png" />
-<img src="https://github.com/yakhsyaa23/SPS-Kel8/assets/AddSIswa.png" />
-<img src="https://github.com/yakhsyaa23/SPS-Kel8/assets/AddUser.png" />
-<img src="https://github.com/yakhsyaa23/SPS-Kel8/assets/LaporanP.png" />
+<img src="https://github.com/yakhsyaa23/SPS-Kel8/blob/main/assets/Login.png" />
+<img src="https://github.com/yakhsyaa23/SPS-Kel8/blob/main/assets/AddSIswa.png" />
+<img src="https://github.com/yakhsyaa23/SPS-Kel8/blob/main/assets/AddUser.png" />
+<img src="https://github.com/yakhsyaa23/SPS-Kel8/blob/main/assets/LaporanP.png" />
 
 
 

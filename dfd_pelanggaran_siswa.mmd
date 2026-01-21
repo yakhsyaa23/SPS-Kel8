@@ -1,0 +1,10 @@
+graph TD;
+    A[E: Admin/Guru] -->|Laporan Pelanggaran| B[P: Proses Pelaporan];
+    B -->|Simpan Data| C[D: Database Pelanggaran];
+    B -->|Notifikasi| D[E: Orang Tua];
+    B -->|Notifikasi| E[E: Siswa];
+    E -->|Permintaan Catatan| F[P: Proses Lihat Catatan];
+    D -->|Permintaan Catatan| F;
+    F -->|Ambil Data| C;
+    F -->|Tampilkan Catatan| E;
+    F -->|Tampilkan Catatan| D;

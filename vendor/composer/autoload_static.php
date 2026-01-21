@@ -6,7 +6,23 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit3709176eaef4d27ffd4493e1e6d4644f
 {
+    public static $files = array (
+        '2df68f9e79c919e2d88506611769ed2e' => __DIR__ . '/..' . '/respect/stringifier/src/stringify.php',
+        '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'Symfony\\Polyfill\\Mbstring\\' => 26,
+        ),
+        'R' => 
+        array (
+            'Respect\\Validation\\' => 19,
+            'Respect\\Stringifier\\Test\\Unit\\' => 30,
+            'Respect\\Stringifier\\Test\\' => 25,
+            'Respect\\Stringifier\\' => 20,
+        ),
         'F' => 
         array (
             'Firebase\\JWT\\' => 13,
@@ -14,6 +30,26 @@ class ComposerStaticInit3709176eaef4d27ffd4493e1e6d4644f
     );
 
     public static $prefixDirsPsr4 = array (
+        'Symfony\\Polyfill\\Mbstring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
+        ),
+        'Respect\\Validation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/respect/validation/library',
+        ),
+        'Respect\\Stringifier\\Test\\Unit\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/respect/stringifier/tests/unit',
+        ),
+        'Respect\\Stringifier\\Test\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/respect/stringifier/tests/src',
+        ),
+        'Respect\\Stringifier\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/respect/stringifier/src',
+        ),
         'Firebase\\JWT\\' => 
         array (
             0 => __DIR__ . '/..' . '/firebase/php-jwt/src',

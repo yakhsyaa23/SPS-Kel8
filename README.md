@@ -11,7 +11,7 @@ Diagram konteks :
 
 DFD Level 0: 
 
-<img src="https://github.com/yakhsyaa23/SPS-Kel8/assets/DFD.png" />
+<img src="[https://github.com/yakhsyaa23/SPS-Kel8/assets/DFD.png](https://github.com/yakhsyaa23/SPS-Kel8/blob/main/assets/DFD.png)" />
 
 
 

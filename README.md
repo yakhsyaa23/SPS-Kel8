@@ -7,20 +7,20 @@ Link Presentasi : <a href="https://teams.microsoft.com/l/meetingrecap?driveId=b%
 
 Diagram konteks :
 
-<img src="https://github.com/yakhsyaa23/SPS-Kel8/assets/Dk.png">
+<img src="https://github.com/yakhsyaa23/SPS-Kel8/assets/Dk.png" />
 
 DFD Level 0: 
 
-<img src="https://github.com/yakhsyaa23/SPS-Kel8/assets/DFD.png">
+<img src="https://github.com/yakhsyaa23/SPS-Kel8/assets/DFD.png" />
 
 
 
 Dukumentasi : 
 
-<img src="https://github.com/yakhsyaa23/SPS-Kel8/assets/Login.png">
-<img src="https://github.com/yakhsyaa23/SPS-Kel8/assets/AddSIswa.png">
-<img src="https://github.com/yakhsyaa23/SPS-Kel8/assets/AddUser.png">
-<img src="https://github.com/yakhsyaa23/SPS-Kel8/assets/LaporanP.png">
+<img src="https://github.com/yakhsyaa23/SPS-Kel8/assets/Login.png" />
+<img src="https://github.com/yakhsyaa23/SPS-Kel8/assets/AddSIswa.png" />
+<img src="https://github.com/yakhsyaa23/SPS-Kel8/assets/AddUser.png" />
+<img src="https://github.com/yakhsyaa23/SPS-Kel8/assets/LaporanP.png" />
 
 
 

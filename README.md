@@ -17,10 +17,10 @@ DFD Level 0:
 
 Dukumentasi : 
 
-<p src="https://github.com/yakhsyaa23/SPS-Kel8/assets/Login.png">
-<p src="https://github.com/yakhsyaa23/SPS-Kel8/assets/AddSIswa.png">
-<p src="https://github.com/yakhsyaa23/SPS-Kel8/assets/AddUser.png">
-<p src="https://github.com/yakhsyaa23/SPS-Kel8/assets/LaporanP.png">
+<img src="https://github.com/yakhsyaa23/SPS-Kel8/assets/Login.png">
+<img src="https://github.com/yakhsyaa23/SPS-Kel8/assets/AddSIswa.png">
+<img src="https://github.com/yakhsyaa23/SPS-Kel8/assets/AddUser.png">
+<img src="https://github.com/yakhsyaa23/SPS-Kel8/assets/LaporanP.png">
 
 
 

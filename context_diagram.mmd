@@ -1,8 +1,0 @@
-graph TD;
-    A[Admin/Guru] -->|Laporan Pelanggaran| B[Sistem Pelanggaran Siswa];
-    B -->|Notifikasi Pelanggaran| C[Siswa];
-    B -->|Notifikasi Pelanggaran| D[Orang Tua];
-    C -->|Permintaan Catatan Pelanggaran| B;
-    D -->|Permintaan Catatan Pelanggaran| B;
-    B -->|Catatan Pelanggaran| C;
-    B -->|Catatan Pelanggaran| D;
